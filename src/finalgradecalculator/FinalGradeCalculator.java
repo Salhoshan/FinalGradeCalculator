@@ -18,6 +18,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 public class FinalGradeCalculator extends Application {
         TextField current = new TextField();
@@ -39,9 +41,12 @@ public class FinalGradeCalculator extends Application {
         pane.setHgap(5);
         pane.setVgap(5);
        pane.setStyle("-fx-border-color: black; -fx-background-color: lightgrey;");
-        
+       
+        Text name = new Text(0,0,"Grade Calculator");
+        name.setFont(Font.font("Verdana",40));
         Button calc = new Button("Calculate");
         GridPane.setHalignment(calc, HPos.RIGHT);
+        pane.add(name, 0, 0);
         pane.add(new Label("Current Grade: "), 0, 0);
         pane.add(current,1,0);
         pane.add(new Label("%"), 2, 0);
